@@ -84,7 +84,7 @@ Create a VMware Fusion VM with the following settings. My configurations
 are made for VMware Fusion exclusively currently and you will have issues
 on other virtualization solutions without minor changes.
 
-  * ISO: NixOS 21.05 or later.
+  * ISO: NixOS 21.11 or later.
   * Disk: SATA 150 GB+
   * CPU/Memory: I give at least half my cores and half my RAM, as much as you can.
   * Graphics: Full acceleration, full resolution, maximum graphics RAM.
@@ -106,6 +106,14 @@ set this to the `NIXADDR` env var:
 
 ```
 $ export NIXADDR=<VM ip address>
+```
+
+The Makefile assumes an Intel processor by default. If you are using an
+ARM-based processor (M1, etc.), you must change `NIXNAME` so that the ARM-based
+configuration is used:
+
+```
+$ export NIXNAME=vm-aarch64
 ```
 
 Perform the initial bootstrap. This will install NixOS on the VM disk image

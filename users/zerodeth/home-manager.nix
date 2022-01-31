@@ -17,13 +17,16 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.git-crypt
     pkgs.htop
     pkgs.jq
+    pkgs.ripgrep
     pkgs.rofi
-    pkgs.go
-    pkgs.gopls
     pkgs.tree
     pkgs.watch
     pkgs.zathura
     pkgs._1password
+
+    pkgs.go
+    pkgs.gopls
+    pkgs.zig-master
 
     pkgs.tlaplusToolbox
     pkgs.tetex
