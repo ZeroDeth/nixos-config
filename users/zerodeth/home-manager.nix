@@ -32,6 +32,8 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.renderdoc
     pkgs.tlaplusToolbox
     pkgs.tetex
+
+    pkgs.asdf-vm
   ];
 
   #---------------------------------------------------------------------
