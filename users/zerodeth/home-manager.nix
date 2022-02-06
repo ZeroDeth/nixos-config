@@ -103,7 +103,7 @@ let sources = import ../../nix/sources.nix; in {
       gdiff = "git diff";
       gl = "git prettylog";
       gp = "git push";
-      gs = "git status";
+      gst = "git status";
       gt = "git tag";
     };
   };
@@ -143,7 +143,7 @@ let sources = import ../../nix/sources.nix; in {
       gdiff = "git diff";
       gl = "git prettylog";
       gp = "git push";
-      gs = "git status";
+      gst = "git status";
       gt = "git tag";
       
       "..." = "cd ../..";
