@@ -97,8 +97,6 @@ let sources = import ../../nix/sources.nix; in {
 
   programs.direnv= {
     enable = true;
-    nix-direnv.enable = true;
-    nix-direnv.enableFlakes = true;
 
     config = {
       whitelist = {
