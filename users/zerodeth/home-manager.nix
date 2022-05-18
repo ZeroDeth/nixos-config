@@ -34,7 +34,7 @@ let sources = import ../../nix/sources.nix; in {
     pkgs.tlaplusToolbox
     pkgs.tetex
 
-    pkgs.nodejs-14_x
+    pkgs.nodejs-16_x
     pkgs.yarn
     # pkgs.vscode
     # pkgs.vscode-fhs        #TODO: Non-Compitable with M1

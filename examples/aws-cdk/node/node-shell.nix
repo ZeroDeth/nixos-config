@@ -3,7 +3,7 @@
 with (import <nixpkgs> {});
 mkShell {
   buildInputs = [
-    nodejs-14_x       #v14.18.3
+    nodejs-14_x       #v16.15.0
     yarn              #1.22.17
     awscli            #aws-cli/1.20.54 Python/3.9.6 Linux/5.15.13 botocore/1.21.54
   ];
