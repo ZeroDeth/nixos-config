@@ -179,6 +179,30 @@
         "url": "https://github.com/oh-my-fish/theme-bobthefish/archive/1eaed8c39951029fa7839859abd5518977a80f83.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
+    "tmux-autoreload": {
+        "branch": "main",
+        "description": "tmux-autoreload watches your tmux configuration file and automatically reloads it on change",
+        "homepage": "",
+        "owner": "b0o",
+        "repo": "tmux-autoreload",
+        "rev": "e98aa3b74cfd5f2df2be2b5d4aa4ddcc843b2eba",
+        "sha256": "0km572dp6b07fp4ma3smkjm59v7aswdrcc78fcihpal3kda3w6gm",
+        "type": "tarball",
+        "url": "https://github.com/b0o/tmux-autoreload/archive/e98aa3b74cfd5f2df2be2b5d4aa4ddcc843b2eba.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tmux-continuum": {
+        "branch": "master",
+        "description": "Continuous saving of tmux environment. Automatic restore when tmux is started. Automatic tmux start when computer is turned on.",
+        "homepage": "",
+        "owner": "tmux-plugins",
+        "repo": "tmux-continuum",
+        "rev": "fc2f31d79537a5b349f55b74c8ca69abaac1ddbb",
+        "sha256": "06i1jp83iybw76raaxciqz9a7ypgpkvbyjn6jjap8jpqfmj2wmjb",
+        "type": "tarball",
+        "url": "https://github.com/tmux-plugins/tmux-continuum/archive/fc2f31d79537a5b349f55b74c8ca69abaac1ddbb.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "tmux-dracula": {
         "branch": "master",
         "description": "🧛🏻‍♂️ Dark theme for tmux",
@@ -201,6 +225,30 @@
         "sha256": "0w7a6n4n86ysiqcqj12j2hg9r5fznvbp3dz8pzas9q1k3avlk0zk",
         "type": "tarball",
         "url": "https://github.com/tmux-plugins/tmux-pain-control/archive/2db63de3b08fc64831d833240749133cecb67d92.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tmux-resurrect": {
+        "branch": "master",
+        "description": "Persists tmux environment across system restarts.",
+        "homepage": "",
+        "owner": "tmux-plugins",
+        "repo": "tmux-resurrect",
+        "rev": "ca6468e2deef11efadfe3a62832ae67742505432",
+        "sha256": "0d7jg5dy4jq64679rf2zqmqbvgiqvpcj5jxfljk7d7y86dnqhj3n",
+        "type": "tarball",
+        "url": "https://github.com/tmux-plugins/tmux-resurrect/archive/ca6468e2deef11efadfe3a62832ae67742505432.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tmux-suspend": {
+        "branch": "main",
+        "description": "Plugin that lets you suspend local tmux session, so that you can work with nested remote tmux session painlessly.",
+        "homepage": "",
+        "owner": "MunifTanjim",
+        "repo": "tmux-suspend",
+        "rev": "f7d59c0482d949013851722bb7de53c0158936db",
+        "sha256": "0j7vjrwc7gniwkv1076q3wc8ccwj42zph5wdmsm9ibz6029wlmzv",
+        "type": "tarball",
+        "url": "https://github.com/MunifTanjim/tmux-suspend/archive/f7d59c0482d949013851722bb7de53c0158936db.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "tree-sitter-hcl": {

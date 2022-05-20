@@ -185,6 +185,10 @@ let sources = import ../../nix/sources.nix; in {
     shortcut = "l";
     secureSocket = false;
 
+    # plugins = with pkgs; [
+    #   tmuxPlugins.nord
+    # ];
+
     extraConfig = ''
       set -ga terminal-overrides ",*256col*:Tc"
 
