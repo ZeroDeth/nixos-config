@@ -194,6 +194,8 @@ let sources = import ../../nix/sources.nix; in {
 
       set -g @continuum-restore 'on'
 
+      set -g @suspend_key 'F12'
+
       bind -n C-k send-keys "clear"\; send-keys "Enter"
       bind-key C-x setw synchronize-panes on \;  set-window-option status-bg red \; display-message "pane sync on"
       bind-key M-x setw synchronize-panes off \;  set-window-option status-bg default \; display-message "pane sync off"
@@ -202,6 +204,7 @@ let sources = import ../../nix/sources.nix; in {
       run-shell ${sources.tmux-dracula}/dracula.tmux
       run-shell ${sources.tmux-resurrect}/resurrect.tmux
       run-shell ${sources.tmux-continuum}/continuum.tmux
+      run-shell ${sources.tmux-suspend}/suspend.tmux
     '';
   };
 
