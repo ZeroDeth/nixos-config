@@ -193,6 +193,8 @@ let sources = import ../../nix/sources.nix; in {
       set -g @dracula-show-weather false
 
       bind -n C-k send-keys "clear"\; send-keys "Enter"
+      bind-key C-x setw synchronize-panes on \;  set-window-option status-bg red \; display-message "pane sync on"
+      bind-key M-x setw synchronize-panes off \;  set-window-option status-bg default \; display-message "pane sync off"
 
       run-shell ${sources.tmux-pain-control}/pain_control.tmux
       run-shell ${sources.tmux-dracula}/dracula.tmux
