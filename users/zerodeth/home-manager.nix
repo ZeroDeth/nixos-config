@@ -192,6 +192,8 @@ let sources = import ../../nix/sources.nix; in {
       set -g @dracula-show-network false
       set -g @dracula-show-weather false
 
+      set -g mouse 'off'
+
       set -g @continuum-restore 'on'
 
       set -g @suspend_key 'F12'
