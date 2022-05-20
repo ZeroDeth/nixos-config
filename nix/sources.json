@@ -1,4 +1,16 @@
 {
+    "YouCompleteMe": {
+        "branch": "master",
+        "description": "A code-completion engine for Vim",
+        "homepage": "http://ycm-core.github.io/YouCompleteMe/",
+        "owner": "tabnine",
+        "repo": "YouCompleteMe",
+        "rev": "c4e5036366ffd54251deb03087a02a98c70dfb77",
+        "sha256": "1kl2rs16mwhmmjx60rlgh78zbv72jl1ds9s44rpjxdflrl6arf0l",
+        "type": "tarball",
+        "url": "https://github.com/tabnine/YouCompleteMe/archive/c4e5036366ffd54251deb03087a02a98c70dfb77.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
     "fish-foreign-env": {
         "branch": "master",
         "description": "Run foreign bash scripts and capture exported environment variables",
@@ -165,6 +177,18 @@
         "sha256": "1pa7ml9x4cpp7v08720xjqllxkxqsqap987gdzzsa26k218q1fhz",
         "type": "tarball",
         "url": "https://github.com/buildpacks/pack/archive/2cf2c3442f574a2239ea3ee17aad7058fefe5410.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "tabnine-vim": {
+        "branch": "master",
+        "description": "Vim client for TabNine. https://vimawesome.com/plugin/tabnine-vim",
+        "homepage": "https://www.tabnine.com/install/vim",
+        "owner": "zxqfl",
+        "repo": "tabnine-vim",
+        "rev": "e27face391a4d9a3e43ff251010f77deddf0c88d",
+        "sha256": "1y5haygvixnav9cck49yvvm14afyy5gyq8rwiybqvkd6vfxlv99f",
+        "type": "tarball",
+        "url": "https://github.com/zxqfl/tabnine-vim/archive/e27face391a4d9a3e43ff251010f77deddf0c88d.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "theme-bobthefish": {
@@ -381,6 +405,18 @@
         "sha256": "079krbw1z4bjwa7qfz33fwjy5h0fry0i2a02wnvqkrqnxmzq5dxs",
         "type": "tarball",
         "url": "https://github.com/jasontbradshaw/pigeon.vim/archive/a7f149c99b7259437032af45db57c53d4c41e68b.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "vim-terraform": {
+        "branch": "master",
+        "description": "basic vim/terraform integration",
+        "homepage": "http://hashivim.github.io/vim-terraform",
+        "owner": "hashivim",
+        "repo": "vim-terraform",
+        "rev": "f0b17ac9f1bbdf3a29dba8b17ab429b1eed5d443",
+        "sha256": "0j87i6kxafwl8a8szy2gzv7d0qhzwynd93iw8k0i42jnpqm8rp3a",
+        "type": "tarball",
+        "url": "https://github.com/hashivim/vim-terraform/archive/f0b17ac9f1bbdf3a29dba8b17ab429b1eed5d443.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-tla": {
