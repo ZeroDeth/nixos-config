@@ -305,6 +305,13 @@ let sources = import ../../nix/sources.nix; in {
     size = 128;
   };
 
+  programs.fzf = {
+		enable = false;
+		tmux.enableShellIntegration = true;
+		enableBashIntegration = true;
+		enableZshIntegration = true;
+  };
+
   programs.htop = {
     enable = true;
 
