@@ -1,4 +1,4 @@
-{ config, pkgs, modulesPath, ... }: {
+{ config, pkgs, lib, modulesPath, ... }: {
   imports = [
     # Parallels is qemu under the covers. This brings in important kernel
     # modules to get a lot of the stuff working.
