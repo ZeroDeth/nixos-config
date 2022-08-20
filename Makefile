@@ -3,11 +3,6 @@ NIXADDR ?= unset
 NIXPORT ?= 22
 NIXUSER ?= zerodeth
 
-# The block device prefix to use.
-#   - sda for SATA/IDE
-#   - vda for virtio
-NIXBLOCKDEVICE ?= sda
-
 # Get the path to this Makefile and directory
 MAKEFILE_DIR := $(patsubst %/,%,$(dir $(abspath $(lastword $(MAKEFILE_LIST)))))
 
@@ -24,6 +19,14 @@ switch:
 test:
 	sudo NIXPKGS_ALLOW_UNSUPPORTED_SYSTEM=1 nixos-rebuild test --flake ".#$(NIXNAME)"
 
+# This builds the given NixOS configuration and pushes the results to the
+# cache. This does not alter the current running system. This requires
+# cachix authentication to be configured out of band.
+cache:
+	nix build '.#nixosConfigurations.$(NIXNAME).config.system.build.toplevel' --json \
+		| jq -r '.[].outputs | to_entries[].value' \
+		| cachix push mitchellh-nixos-config
+
 # bootstrap a brand new VM. The VM should have NixOS ISO on the CD drive
 # and just set the password of the root user to "root". This will install
 # NixOS. After installing NixOS, you must reboot and set the root password
@@ -33,14 +36,16 @@ test:
 # in one step but when I tried to merge them I got errors. One day.
 vm/bootstrap0:
 	ssh $(SSH_OPTIONS) -p$(NIXPORT) root@$(NIXADDR) " \
-		parted /dev/$(NIXBLOCKDEVICE) -- mklabel gpt; \
-		parted /dev/$(NIXBLOCKDEVICE) -- mkpart primary 512MiB -8GiB; \
-		parted /dev/$(NIXBLOCKDEVICE) -- mkpart primary linux-swap -8GiB 100\%; \
-		parted /dev/$(NIXBLOCKDEVICE) -- mkpart ESP fat32 1MiB 512MiB; \
-		parted /dev/$(NIXBLOCKDEVICE) -- set 3 esp on; \
-		mkfs.ext4 -L nixos /dev/$(NIXBLOCKDEVICE)1; \
-		mkswap -L swap /dev/$(NIXBLOCKDEVICE)2; \
-		mkfs.fat -F 32 -n boot /dev/$(NIXBLOCKDEVICE)3; \
+		parted /dev/nvme0n1 -- mklabel gpt; \
+		parted /dev/nvme0n1 -- mkpart primary 512MiB -8GiB; \
+		parted /dev/nvme0n1 -- mkpart primary linux-swap -8GiB 100\%; \
+		parted /dev/nvme0n1 -- mkpart ESP fat32 1MiB 512MiB; \
+		parted /dev/nvme0n1 -- set 3 esp on; \
+		sleep 1; \
+		mkfs.ext4 -L nixos /dev/nvme0n1p1; \
+		mkswap -L swap /dev/nvme0n1p2; \
+		mkfs.fat -F 32 -n boot /dev/nvme0n1p3; \
+		sleep 1; \
 		mount /dev/disk/by-label/nixos /mnt; \
 		mkdir -p /mnt/boot; \
 		mount /dev/disk/by-label/boot /mnt/boot; \
@@ -48,6 +53,8 @@ vm/bootstrap0:
 		sed --in-place '/system\.stateVersion = .*/a \
 			nix.package = pkgs.nixUnstable;\n \
 			nix.extraOptions = \"experimental-features = nix-command flakes\";\n \
+			nix.binaryCaches = [\"https://mitchellh-nixos-config.cachix.org\"];\n \
+			nix.binaryCachePublicKeys = [\"mitchellh-nixos-config.cachix.org-1:bjEbXJyLrL1HZZHBbO4QALnI5faYZppzkU4D2s0G8RQ=\"];\n \
   			services.openssh.enable = true;\n \
 			services.openssh.passwordAuthentication = true;\n \
 			services.openssh.permitRootLogin = \"yes\";\n \
@@ -66,7 +73,6 @@ vm/bootstrap:
 	ssh $(SSH_OPTIONS) -p$(NIXPORT) $(NIXUSER)@$(NIXADDR) " \
 		sudo reboot; \
 	"
-
 
 # copy our secrets into the VM
 vm/secrets:

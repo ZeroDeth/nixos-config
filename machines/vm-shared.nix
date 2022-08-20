@@ -4,15 +4,21 @@
   # Be careful updating this.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  # use unstable nix so we can access flakes
   nix = {
+    # use unstable nix so we can access flakes
     package = pkgs.nixUnstable;
     extraOptions = ''
       experimental-features = nix-command flakes
       keep-outputs = true
       keep-derivations = true
     '';
-   };
+
+    # public binary cache that I use for all my derivations. You can keep
+    # this, use your own, or toss it. Its typically safe to use a binary cache
+    # since the data inside is checksummed.
+    binaryCaches = ["https://mitchellh-nixos-config.cachix.org"];
+    binaryCachePublicKeys = ["mitchellh-nixos-config.cachix.org-1:bjEbXJyLrL1HZZHBbO4QALnI5faYZppzkU4D2s0G8RQ="];
+  };
 
   # We expect to run the VM on hidpi machines.
   hardware.video.hidpi.enable = true;
@@ -64,9 +70,7 @@
       # display resolution. This is a known issue with VMware Fusion.
       sessionCommands = ''
         ${pkgs.xorg.xset}/bin/xset r rate 200 40
-      '' + (if currentSystemName == "vm-aarch64" then ''
-        ${pkgs.xorg.xrandr}/bin/xrandr -s '2880x1800'
-      '' else "");
+      '';
     };
 
     windowManager = {
@@ -90,6 +94,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    cachix
     gnumake
     killall
     niv
@@ -106,19 +111,6 @@
     # You can test if you don't need this by deleting this and seeing
     # if the clipboard sill works.
     gtkmm3
-
-    # VMware on M1 doesn't support automatic resizing yet and on
-    # my big monitor it doesn't detect the resolution either so we just
-    # manualy create the resolution and switch to it with this script.
-    # This script could be better but its hopefully temporary so just force it.
-    (writeShellScriptBin "xrandr-6k" ''
-      xrandr --newmode "6016x3384_60.00"  1768.50  6016 6544 7216 8416  3384 3387 3392 3503 -hsync +vsync
-      xrandr --addmode Virtual-1 6016x3384_60.00
-      xrandr -s 6016x3384_60.00
-    '')
-    (writeShellScriptBin "xrandr-mbp" ''
-      xrandr -s 2880x1800
-    '')
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
