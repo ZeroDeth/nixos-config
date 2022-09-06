@@ -59,7 +59,7 @@ nix-env -qaP | grep nodejs
 
 ### Installing packages
 ```bash
-nix-env -iA nixpkgs.gitFull
+nix-env -iA nixpkgs.gitFull # nix-env install -iA nixos.gitFull
 # Installing pkgs in folders (.nix)
 nix profile install -f nomad-bin.nix
 nix profile install nixpkgs#hello
@@ -102,3 +102,23 @@ nix eval --raw 'nixpkgs#asdf-vm'
 nix eval --raw 'nixpkgs#asdf-vm.pname'
 nix eval --raw 'nixpkgs#asdf-vm.version'
 ```
+
+### CleanUp
+
+```bash
+nix-collect-garbage --delete-old
+
+sudo nix-collect-garbage; sudo nix-collect-garbage -d
+```
+###
+```bash
+sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
+
+nix-env --switch-generation 0
+
+```
+
+## Resources
+
+- [NixOS Setup Guide - Configuration/Home-Manager/Flakes](https://www.youtube.com/watch?v=AGVXJ-TIv3Y/)
+- [Matthias’ NixOS & Nix-Darwin System Configuration Flake](https://github.com/MatthiasBenaets/nixos-config)
