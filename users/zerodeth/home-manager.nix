@@ -1,6 +1,18 @@
 { config, lib, pkgs, ... }:
 
-let sources = import ../../nix/sources.nix; in {
+let
+  sources = import ../../nix/sources.nix;
+
+  # For our MANPAGER env var
+  # https://github.com/sharkdp/bat/issues/1145
+  manpager = (pkgs.writeShellScriptBin "manpager" ''
+    cat "$1" | col -bx | bat --language man --style plain
+  '');
+in {
+  # Home-manager 22.11 requires this be set. We never set it so we have
+  # to use the old state version.
+  home.stateVersion = "18.09";
+
   xdg.enable = true;
 
   #---------------------------------------------------------------------
@@ -12,6 +24,7 @@ let sources = import ../../nix/sources.nix; in {
   # not a huge list.
   home.packages = [
     pkgs.bat
+    pkgs.chromium
     pkgs.fd
     pkgs.firefox
     pkgs.fzf
@@ -27,7 +40,7 @@ let sources = import ../../nix/sources.nix; in {
 
     pkgs.go
     pkgs.gopls
-    pkgs.zig-master
+    pkgs.zigpkgs.master
 
     pkgs.tlaplusToolbox
     pkgs.tetex
@@ -50,7 +63,7 @@ let sources = import ../../nix/sources.nix; in {
     LC_ALL = "en_GB.UTF-8";
     EDITOR = "nvim";
     PAGER = "less -FirSwX";
-    MANPAGER = "sh -c 'col -bx | ${pkgs.bat}/bin/bat -l man -p'";
+    MANPAGER = "${manpager}/bin/manpager";
   };
 
   home.file.".gdbinit".source = ./gdbinit;
