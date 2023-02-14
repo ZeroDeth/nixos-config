@@ -55,7 +55,7 @@ in {
     # pkgs.vscode-fhs        #TODO: Non-Compitable with M1
     pkgs.vscode-extensions.ms-vscode-remote.remote-ssh   #Fixing remote-ssh
 
-  ];
+  ]);
 
   #---------------------------------------------------------------------
   # Env vars and dotfiles
