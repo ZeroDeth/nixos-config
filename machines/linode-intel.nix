@@ -26,6 +26,11 @@
     binaryCachePublicKeys = ["mitchellh-nixos-config.cachix.org-1:bjEbXJyLrL1HZZHBbO4QALnI5faYZppzkU4D2s0G8RQ="];
   };
 
+    nixpkgs.config.permittedInsecurePackages = [
+    # Needed for k2pdfopt 2.53.
+    "mupdf-1.17.0"
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   # Use the GRUB 2 boot loader.
