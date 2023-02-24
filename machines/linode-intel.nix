@@ -91,7 +91,10 @@
     home = "/home/zerodeth";
     description = "Sherif Abdalla";
     extraGroups = [ "docker" "wheel" "networkmanager" ];
-    openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlHERFgHj/PvJSgWkevwh0QrxFhNVte+27Q/rh3fGtm zerodeth" ];
+    openssh.authorizedKeys.keys = [
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFlHERFgHj/PvJSgWkevwh0QrxFhNVte+27Q/rh3fGtm zerodeth"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHztJdM8If1PkPe7Bk0sqsEnz08J1lkDH9gPkSh4Oasp ZeroDeth"
+    ];
   };
 
   # List packages installed in system profile. To search, run:
