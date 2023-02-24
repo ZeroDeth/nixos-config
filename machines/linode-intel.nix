@@ -97,22 +97,23 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-      inetutils
-      mtr
-      sysstat
-      vim
-      # firefox
-      nixUnstable
-      nodejs-16_x
-      yarn
-      git
-
       cachix
       gnumake
       killall
       niv
       rxvt_unicode
       xclip
+
+      inetutils
+      mtr
+      sysstat
+      # vim
+      # firefox
+      nixUnstable
+      # nodejs-16_x
+      # yarn
+      # git
+
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
