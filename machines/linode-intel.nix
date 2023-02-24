@@ -101,6 +101,13 @@
       nodejs-16_x
       yarn
       git
+
+      cachix
+      gnumake
+      killall
+      niv
+      rxvt_unicode
+      xclip
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
