@@ -78,7 +78,13 @@
     darwinConfigurations.macbook-pro-m1 = mkDarwin "macbook-pro-m1" {
       inherit darwin nixpkgs home-manager overlays;
       system = "aarch64-darwin";
-      user   = "mitchellh";
+      user   = "zerodeth";
+    };
+
+    nixosConfigurations.linode-intel = mkVM "linode-intel" rec {
+      inherit nixpkgs home-manager overlays;
+      system = "x86_64-linux";
+      user   = "zerodeth";
     };
   };
 }
