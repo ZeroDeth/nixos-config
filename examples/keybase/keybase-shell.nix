@@ -4,10 +4,11 @@ with import <nixpkgs> {};
 stdenv.mkDerivation {
   name = "keybase-env";
 
-  buildInputs = [
-    pkgs.keybase
-    pkgs.keybase-gui
-    pkgs.kbfs
+  buildInputs = with pkgs; [
+    keybase
+    keybase-gui
+    kbfs
+    gnupg
   ];
 
   # The '' quotes are 2 single quote characters
