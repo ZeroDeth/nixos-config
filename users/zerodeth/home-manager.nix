@@ -52,7 +52,8 @@ in {
     pkgs.nodejs-16_x
     pkgs.yarn
     # pkgs.vscode
-    # pkgs.vscode-fhs        #TODO: Non-Compitable with M1
+    pkgs.code-server
+    pkgs.vscode-fhs        #TODO: Non-Compitable with M1
     pkgs.vscode-extensions.ms-vscode-remote.remote-ssh   #Fixing remote-ssh
 
   ]);
