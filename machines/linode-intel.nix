@@ -33,6 +33,9 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # We expect to run the VM on hidpi machines.
+  hardware.video.hidpi.enable = true;
+
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
@@ -58,6 +61,46 @@
 
   # Select internationalisation properties.
   i18n.defaultLocale = "en_GB.UTF-8";
+
+  # setup windowing environment
+  # services.xserver = {
+  #   enable = true;
+  #   layout = "gb";
+  #   dpi = 220;
+
+  #   desktopManager = {
+  #     xterm.enable = false;
+  #     wallpaper.mode = "fill";
+  #   };
+
+  #   displayManager = {
+  #     defaultSession = "none+i3";
+  #     lightdm.enable = true;
+
+  #     # AARCH64: For now, on Apple Silicon, we must manually set the
+  #     # display resolution. This is a known issue with VMware Fusion.
+  #     sessionCommands = ''
+  #       ${pkgs.xorg.xset}/bin/xset r rate 200 40
+  #     '';
+  #   };
+
+  #   windowManager = {
+  #     i3.enable = true;
+  #   };
+  # };
+
+  # Define a user account. Don't forget to set a password with ‘passwd’.
+  users.mutableUsers = false;
+
+  # Manage fonts. We pull these from a secret directory since most of these
+  # fonts require a purchase.
+  fonts = {
+    fontDir.enable = true;
+
+    fonts = [
+      pkgs.fira-code
+    ];
+  };
 
   # console = {
   #   font = "Lat2-Terminus16";
@@ -117,6 +160,13 @@
       # yarn
       # git
 
+    # For hypervisors that support auto-resizing, this script forces it.
+    # I've noticed not everyone listens to the udev events so this is a hack.
+    (writeShellScriptBin "xrandr-auto" ''
+      xrandr --output Virtual-1 --auto
+    '')
+
+    gtkmm3
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
