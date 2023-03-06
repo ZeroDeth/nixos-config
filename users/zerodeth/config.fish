@@ -2,25 +2,27 @@
 # SSH Agent
 #-------------------------------------------------------------------------------
 function __ssh_agent_is_started -d "check if ssh agent is already started"
-	if begin; test -f $SSH_ENV; and test -z "$SSH_AGENT_PID"; end
-		source $SSH_ENV > /dev/null
-	end
+    if begin
+            test -f $SSH_ENV; and test -z "$SSH_AGENT_PID"
+        end
+        source $SSH_ENV >/dev/null
+    end
 
-	if test -z "$SSH_AGENT_PID"
-		return 1
-	end
+    if test -z "$SSH_AGENT_PID"
+        return 1
+    end
 
-	ssh-add -l > /dev/null 2>&1
-	if test $status -eq 2
-		return 1
-	end
+    ssh-add -l >/dev/null 2>&1
+    if test $status -eq 2
+        return 1
+    end
 end
 
 function __ssh_agent_start -d "start a new ssh agent"
-  ssh-agent -c | sed 's/^echo/#echo/' > $SSH_ENV
-  chmod 600 $SSH_ENV
-  source $SSH_ENV > /dev/null
-  ssh-add
+    ssh-agent -c | sed 's/^echo/#echo/' >$SSH_ENV
+    chmod 600 $SSH_ENV
+    source $SSH_ENV >/dev/null
+    ssh-add
 end
 
 if not test -d $HOME/.ssh
@@ -56,13 +58,16 @@ end
 mkdir -p $HOME/.vim/{backup,swap,undo}
 
 # Homebrew
-if test -d "/opt/homebrew"
-    set -gx HOMEBREW_PREFIX "/opt/homebrew";
-    set -gx HOMEBREW_CELLAR "/opt/homebrew/Cellar";
-    set -gx HOMEBREW_REPOSITORY "/opt/homebrew";
-    set -q PATH; or set PATH ''; set -gx PATH "/opt/homebrew/bin" "/opt/homebrew/sbin" $PATH;
-    set -q MANPATH; or set MANPATH ''; set -gx MANPATH "/opt/homebrew/share/man" $MANPATH;
-    set -q INFOPATH; or set INFOPATH ''; set -gx INFOPATH "/opt/homebrew/share/info" $INFOPATH;
+if test -d /opt/homebrew
+    set -gx HOMEBREW_PREFIX /opt/homebrew
+    set -gx HOMEBREW_CELLAR /opt/homebrew/Cellar
+    set -gx HOMEBREW_REPOSITORY /opt/homebrew
+    set -q PATH; or set PATH ''
+    set -gx PATH /opt/homebrew/bin /opt/homebrew/sbin $PATH
+    set -q MANPATH; or set MANPATH ''
+    set -gx MANPATH /opt/homebrew/share/man $MANPATH
+    set -q INFOPATH; or set INFOPATH ''
+    set -gx INFOPATH /opt/homebrew/share/info $INFOPATH
 end
 
 #-------------------------------------------------------------------------------
@@ -70,7 +75,8 @@ end
 #-------------------------------------------------------------------------------
 # Do not show any greeting
 set --universal --erase fish_greeting
-function fish_greeting; end
+function fish_greeting
+end
 funcsave fish_greeting
 
 # bobthefish theme
@@ -105,7 +111,7 @@ set -U fish_pager_color_progress brwhite --background=cyan
 
 # Override the nix prompt for the theme so that we show a more concise prompt
 function __bobthefish_prompt_nix -S -d 'Display current nix environment'
-    [ "$theme_display_nix" = 'no' -o -z "$IN_NIX_SHELL" ]
+    [ "$theme_display_nix" = no -o -z "$IN_NIX_SHELL" ]
     and return
 
     __bobthefish_start_segment $color_nix
@@ -145,11 +151,13 @@ set -gx PATH $PATH $HOME/.krew/bin
 #-------------------------------------------------------------------------------
 # Aliases
 #-------------------------------------------------------------------------------
-# 
-# 
+#
+#
 # . ~/.config/fish/kubectl_aliases.fish
 # [ -f "$HOME/.config/fish/kubectl_aliases.fish" ] && . "./kubectl_aliases.fish"
 
 # When you miswrite command, you can just write fuck and this tool will guess command you wanted to write.
 eval (thefuck --alias | tr '\n' ';')
+
+# Source file for any general-case utils. example: additional aliases (k8s etc.)
 source "$HOME/.config/shell/shell_env"
