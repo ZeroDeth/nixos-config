@@ -38,7 +38,8 @@ in {
     pkgs.watch
     pkgs.thefuck
     pkgs.zoxide
-    
+    pkgs.tig
+
     pkgs.gopls
     pkgs.zigpkgs.master
   ] ++ (lib.optionals isLinux [
