@@ -63,31 +63,37 @@
   i18n.defaultLocale = "en_GB.UTF-8";
 
   # setup windowing environment
-  # services.xserver = {
-  #   enable = true;
-  #   layout = "gb";
-  #   dpi = 220;
+  services.xserver = {
+    enable = true;
+    layout = "gb";
+    dpi = 220;
 
-  #   desktopManager = {
-  #     xterm.enable = false;
-  #     wallpaper.mode = "fill";
-  #   };
+    desktopManager = {
+      xterm.enable = false;
+      wallpaper.mode = "fill";
+    };
 
-  #   displayManager = {
-  #     defaultSession = "none+i3";
-  #     lightdm.enable = true;
+    displayManager = {
+      defaultSession = "none+i3";
+      lightdm.enable = true;
 
-  #     # AARCH64: For now, on Apple Silicon, we must manually set the
-  #     # display resolution. This is a known issue with VMware Fusion.
-  #     sessionCommands = ''
-  #       ${pkgs.xorg.xset}/bin/xset r rate 200 40
-  #     '';
-  #   };
+      # AARCH64: For now, on Apple Silicon, we must manually set the
+      # display resolution. This is a known issue with VMware Fusion.
+      # sessionCommands = ''
+      #   ${pkgs.xorg.xset}/bin/xset r rate 200 40
+      # '';
+    };
 
-  #   windowManager = {
-  #     i3.enable = true;
-  #   };
-  # };
+    windowManager = {
+      i3.enable = true;
+    };
+  };
+
+  # Enable flatpak. We try not to use this (we prefer to use Nix!) but
+  # some software its useful to use this and we also use it for dev tools.
+  services.flatpak.enable = true;
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.mutableUsers = false;
@@ -104,7 +110,7 @@
 
   # console = {
   #   font = "Lat2-Terminus16";
-  #   keyMap = "us";
+  #   keyMap = "gb";
   #   useXkbConfig = true; # use xkbOptions in tty.
   # };
 
@@ -112,7 +118,7 @@
   # services.xserver.enable = true;
 
   # Configure keymap in X11
-  # services.xserver.layout = "us";
+  # services.xserver.layout = "gb";
   # services.xserver.xkbOptions = {
   #   "eurosign:e";
   #   "caps:escape" # map caps to escape.
