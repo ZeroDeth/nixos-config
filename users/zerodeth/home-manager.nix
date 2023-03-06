@@ -36,6 +36,7 @@ in {
     pkgs.ripgrep
     pkgs.tree
     pkgs.watch
+    pkgs.thefuck
 
     pkgs.gopls
     pkgs.zigpkgs.master

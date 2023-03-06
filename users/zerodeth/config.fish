@@ -150,5 +150,6 @@ set -gx PATH $PATH $HOME/.krew/bin
 # . ~/.config/fish/kubectl_aliases.fish
 # [ -f "$HOME/.config/fish/kubectl_aliases.fish" ] && . "./kubectl_aliases.fish"
 
-# eval (thefuck --alias | tr '\n' ';')
+# When you miswrite command, you can just write fuck and this tool will guess command you wanted to write.
+eval (thefuck --alias | tr '\n' ';')
 source "$HOME/.config/shell/shell_env"
