@@ -34,6 +34,8 @@
 
     # Other packages
     zig.url = "github:mitchellh/zig-overlay";
+
+    # vscode-server.url = "github:msteen/nixos-vscode-server";
   };
 
   outputs = { self, nixpkgs, home-manager, darwin, ... }@inputs: let
@@ -85,6 +87,12 @@
       inherit nixpkgs home-manager overlays;
       system = "x86_64-linux";
       user   = "zerodeth";
+      # modules = [
+      #   vscode-server.nixosModule
+      #   ({ config, pkgs, ... }: {
+      #     services.vscode-server.enable = true;
+      #   })
+      # ];
     };
   };
 }
