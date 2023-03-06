@@ -161,3 +161,9 @@ eval (thefuck --alias | tr '\n' ';')
 
 # Source file for any general-case utils. example: additional aliases (k8s etc.)
 source "$HOME/.config/shell/shell_env"
+
+#-------------------------------------------------------------------------------
+# General
+#-------------------------------------------------------------------------------
+# Configure zoxide
+zoxide init fish | source

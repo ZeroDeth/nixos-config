@@ -37,7 +37,8 @@ in {
     pkgs.tree
     pkgs.watch
     pkgs.thefuck
-
+    pkgs.zoxide
+    
     pkgs.gopls
     pkgs.zigpkgs.master
   ] ++ (lib.optionals isLinux [
