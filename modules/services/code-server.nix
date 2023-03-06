@@ -1,3 +1,5 @@
+# Not working
+
 { config, pkgs, lib, ... }:
 
 let cfg = config.vital.code-server;
