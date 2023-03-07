@@ -27,6 +27,7 @@ in {
   # per-project flakes sourced with direnv and nix-shell, so this is
   # not a huge list.
   home.packages = [
+    pkgs.byobu
     pkgs.bat
     pkgs.fd
     pkgs.fzf

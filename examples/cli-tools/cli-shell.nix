@@ -71,7 +71,7 @@ stdenv.mkDerivation {
     ## CLI External Sercvices
     ngrok               # Reverse proxy for sharing localhost
     tmate               # Share a terminal session via internet
-    byobu               # GNU Screen terminal multiplexer (better tmux)
+    # byobu               # GNU Screen terminal multiplexer (better tmux)
     asciinema           # Recording + sharing terminal sessions
     navi                # Interactive cheat sheet
     # transfer.sh         # Fast file sharing
