@@ -30,15 +30,19 @@ in {
     pkgs.bat
     pkgs.fd
     pkgs.fzf
+    pkgs.btop
+    pkgs.ctop
     pkgs.htop
-    pkgs.gtop
+    # pkgs.gtop
     pkgs.jq
     pkgs.ripgrep
-    pkgs.tree
+    # pkgs.tree
+    pkgs.tre-command
     pkgs.watch
     pkgs.thefuck
     pkgs.zoxide
     pkgs.tig
+    # pkgs.bandwhich
 
     pkgs.gopls
     pkgs.zigpkgs.master

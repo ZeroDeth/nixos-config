@@ -32,13 +32,13 @@ stdenv.mkDerivation {
     ack                 # grep like source code search tool
     # rsync               # Fast, incremental file transfer
     sd                  # Find and replace (better sed)
-    tre-command         # Directory hierarchy (better tree)
+    # tre-command         # Directory hierarchy (better tree)
     xsel                # Access the clipboard
 
     ## CLI Monitoring and Performance Apps
     bandwhich           # Bandwidth utilization monitor
-    ctop                # Container metrics and monitoring
-    btop                # Resource monitoring (better htop)
+    # ctop                # Container metrics and monitoring
+    # btop                # Resource monitoring (better htop)
     glances             # Resource monitor + web and API
     gping               # Interactive ping tool (better ping)
     dua                 # Disk usage analyzer and monitor (better du)
