@@ -39,6 +39,7 @@ in {
     pkgs.ripgrep
     # pkgs.tree
     pkgs.tre-command
+    pkgs.trash-cli
     pkgs.watch
     pkgs.thefuck
     pkgs.zoxide
@@ -158,6 +159,12 @@ in {
       gp = "git push";
       gs = "git status";
       gt = "git tag";
+
+      rm = "trash-put";
+      unrm = "trash-restore";
+      rmcl = "trash-empty";
+      rml = "trash-list";
+
     } // (if isLinux then {
       # Two decades of using a Mac has made this such a strong memory
       # that I'm just going to keep it consistent.
