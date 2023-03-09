@@ -95,7 +95,7 @@
   services.xrdp = {
     enable = false;
     defaultWindowManager = "startplasma-x11";
-    openFirewall = true;
+    openFirewall = false;
   };
 
   # Enable flatpak. We try not to use this (we prefer to use Nix!) but
