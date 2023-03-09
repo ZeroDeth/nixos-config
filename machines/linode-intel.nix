@@ -71,11 +71,13 @@
     desktopManager = {
       xterm.enable = false;
       wallpaper.mode = "fill";
+      plasma5.enable = false;   # RDP support
     };
 
     displayManager = {
       defaultSession = "none+i3";
       lightdm.enable = true;
+      sddm.enable = false;   # RDP support
 
       # AARCH64: For now, on Apple Silicon, we must manually set the
       # display resolution. This is a known issue with VMware Fusion.
@@ -87,6 +89,13 @@
     windowManager = {
       i3.enable = true;
     };
+  };
+
+  # Remote Desktop (RDP) configuration
+  services.xrdp = {
+    enable = false;
+    defaultWindowManager = "startplasma-x11";
+    openFirewall = true;
   };
 
   # Enable flatpak. We try not to use this (we prefer to use Nix!) but
