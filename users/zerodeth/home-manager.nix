@@ -29,6 +29,7 @@ in {
   home.packages = [
     pkgs.byobu
     pkgs.bat
+    pkgs.exa
     pkgs.fd
     pkgs.fzf
     pkgs.btop
@@ -159,6 +160,10 @@ in {
       gp = "git push";
       gs = "git status";
       gt = "git tag";
+
+      la = "exa --long --all --group --header --group-directories-first --sort=type --icons";
+      lg = "exa --long --all --group --header --git";
+      lt = "exa --long --all --group --header --tree --level ";
 
       rm = "trash-put";
       unrm = "trash-restore";

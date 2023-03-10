@@ -12,7 +12,7 @@ stdenv.mkDerivation {
     # zoxide              # Easy navigation (better cd)
     tldr                # Community-maintained docs (better man)
     scc                 # Count lines of code (better cloc)
-    exa                 # Listing Files (better ls)
+    # exa                 # Listing Files (better ls)
     duf                 # Disk Usage (better df)
     aria2               # Download Utility (better wget)
     # bat                 # Reading Files (better cat)
