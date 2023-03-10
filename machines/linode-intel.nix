@@ -8,6 +8,8 @@
   imports =
     [ # Include the results of the hardware scan.
       ../hardware/linode-intel.nix
+      # ../modules/services/nixos-vscode-ssh-fix.nix
+      # ../modules/services/nixos-hm-auto-update.nix
     ];
 
   nix = {
@@ -241,5 +243,11 @@
     enable = true;
     apiKeyFile = "/var/lib/longview/apiKeyFile";
   };
+
+  # services = {
+  #   nixos-hm-auto-update.enable = true;
+
+  #   nixos-vscode-ssh-fix.enable = true;
+  # };
 
 }
