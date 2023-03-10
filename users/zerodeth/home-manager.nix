@@ -171,6 +171,15 @@ in {
       rmcl = "trash-empty";
       rml = "trash-list";
 
+      # ossw = "sudo nixos-rebuild switch --flake '/etc/nixos/#nixtst' --impure -v";
+      # hmsw = "home-manager switch --flake ~/.config/nixpkgs/#$USER";
+      # upa = "nix flake update ~/.config/nixpkgs -v && sudo nix flake update '/etc/nixos/' -v";
+      # fusw = "upa && ossw && hmsw";
+      # rusw = "ossw && hmsw";
+      ucl = "nix-collect-garbage -d && nix-store --gc && nix-store --repair --verify --check-contents && nix-store --optimise -vvv";
+      scl = "sudo nix-collect-garbage -d && sudo nix-store --gc && sudo nix-store --repair --verify --check-contents && sudo nix-store --optimise -vvv";
+      acl = "ucl && scl";
+
     } // (if isLinux then {
       # Two decades of using a Mac has made this such a strong memory
       # that I'm just going to keep it consistent.
