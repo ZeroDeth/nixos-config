@@ -158,6 +158,7 @@ in {
       gdiff = "git diff";
       gl = "git prettylog";
       gp = "git push";
+      gpf = "git push --force";
       gs = "git status";
       gt = "git tag";
 
