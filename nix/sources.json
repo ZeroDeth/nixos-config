@@ -5,10 +5,12 @@
         "homepage": "http://ycm-core.github.io/YouCompleteMe/",
         "owner": "tabnine",
         "repo": "YouCompleteMe",
-        "rev": "c4e5036366ffd54251deb03087a02a98c70dfb77",
-        "sha256": "1kl2rs16mwhmmjx60rlgh78zbv72jl1ds9s44rpjxdflrl6arf0l",
+        "rev": "fab40efd86309f16d2c5f96529b248a13b410012",
+        "sha256": "0wkshq7nakl4x3hc046xny4k6ihpyr74qlrws2c8xsn2byldy50y",
         "type": "tarball",
-        "url": "https://github.com/tabnine/YouCompleteMe/archive/c4e5036366ffd54251deb03087a02a98c70dfb77.tar.gz",
+        "url": "https://github.com/tabnine/YouCompleteMe/archive/fab40efd86309f16d2c5f96529b248a13b410012.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "fish-foreign-env": {
@@ -197,10 +199,10 @@
         "homepage": "https://www.tabnine.com/install/vim",
         "owner": "zxqfl",
         "repo": "tabnine-vim",
-        "rev": "e27face391a4d9a3e43ff251010f77deddf0c88d",
-        "sha256": "1y5haygvixnav9cck49yvvm14afyy5gyq8rwiybqvkd6vfxlv99f",
+        "rev": "9944f213fe47a7d2ff269cda334ba28c14a4df79",
+        "sha256": "1s6636s0pah340fgi5lip9zpnbd08f06idcywis5w9jqqy234b37",
         "type": "tarball",
-        "url": "https://github.com/zxqfl/tabnine-vim/archive/e27face391a4d9a3e43ff251010f77deddf0c88d.tar.gz",
+        "url": "https://github.com/zxqfl/tabnine-vim/archive/9944f213fe47a7d2ff269cda334ba28c14a4df79.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "theme-bobthefish": {
@@ -309,6 +311,18 @@
         "sha256": "001y2z2683fagryqj5f0gs3rcgx2nbw3x3r9afydhss80ihb8zvi",
         "type": "tarball",
         "url": "https://github.com/mitchellh/tree-sitter-proto/archive/42d82fa18f8afe59b5fc0b16c207ee4f84cb185f.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "vikube.vim": {
+        "branch": "master",
+        "description": "Operating Kubernetes Cluster from Vim, in Vim",
+        "homepage": null,
+        "owner": "c9s",
+        "repo": "vikube.vim",
+        "rev": "8b930ed7a64880e9073458111db0e7ccecfd1231",
+        "sha256": "15v556jw7mq1cb28j0nm34ha7kc2dg11s4jn9dipvn3kl6vprhyd",
+        "type": "tarball",
+        "url": "https://github.com/c9s/vikube.vim/archive/8b930ed7a64880e9073458111db0e7ccecfd1231.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-cue": {
@@ -425,10 +439,10 @@
         "homepage": "http://hashivim.github.io/vim-terraform",
         "owner": "hashivim",
         "repo": "vim-terraform",
-        "rev": "f0b17ac9f1bbdf3a29dba8b17ab429b1eed5d443",
-        "sha256": "0j87i6kxafwl8a8szy2gzv7d0qhzwynd93iw8k0i42jnpqm8rp3a",
+        "rev": "d00503de9bed3a1da7206090cb148c6a1acce870",
+        "sha256": "1vh8yv2cpyfnqmmjza8dm3b11mhz9x8lwln865hdjggzbj9vdbcg",
         "type": "tarball",
-        "url": "https://github.com/hashivim/vim-terraform/archive/f0b17ac9f1bbdf3a29dba8b17ab429b1eed5d443.tar.gz",
+        "url": "https://github.com/hashivim/vim-terraform/archive/d00503de9bed3a1da7206090cb148c6a1acce870.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-tla": {

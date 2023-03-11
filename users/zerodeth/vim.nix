@@ -114,6 +114,21 @@ let sources = import ../../nix/sources.nix; in rec {
       name = "nvim-treesitter-textobjects";
       src = sources.nvim-treesitter-textobjects;
     };
+
+    tabnine-vim = vimUtils.buildVimPlugin {
+      name = "tabnine-vim";
+      src = sources.tabnine-vim;
+    };
+
+    # vikube.vim = vimUtils.buildVimPlugin {
+    #   name = "vikube.vim";
+    #   src = sources.vikube.vim;
+    # };
+
+    vim-terraform = vimUtils.buildVimPlugin {
+      name = "vim-terraform";
+      src = sources.vim-terraform;
+    };
   };
 
   tree-sitter-proto = self.callPackage

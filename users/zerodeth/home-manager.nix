@@ -337,7 +337,7 @@ in {
 
       vimPlugins.YouCompleteMe
       vimPlugins.tabnine-vim
-      # vimPlugins.vikube
+      # vimPlugins.vikube.vm
       vimPlugins.vim-terraform
     ];
 
