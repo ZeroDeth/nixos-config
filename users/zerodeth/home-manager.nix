@@ -161,7 +161,10 @@ in {
       gs = "git status";
       gt = "git tag";
 
+      ls = "exa";
+      ll = "exa -l";
       la = "exa --long --all --group --header --group-directories-first --sort=type --icons";
+      lla = "exa -la";
       lg = "exa --long --all --group --header --git";
       lt = "exa --long --all --group --header --tree --level ";
 
