@@ -158,7 +158,6 @@ in {
       gdiff = "git diff";
       gl = "git prettylog";
       gp = "git push";
-      gpf = "git push --force";
       gs = "git status";
       gt = "git tag";
 
@@ -195,6 +194,7 @@ in {
       "fish-foreign-env"
       "theme-bobthefish"
       "fish-kubectl-completions"
+      "plugin-git"
     ];
   };
 
