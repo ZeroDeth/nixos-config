@@ -195,6 +195,11 @@ in {
       "theme-bobthefish"
       "fish-kubectl-completions"
       "plugin-git"
+      # "gitnow"
+      "fish-ssh-agent"
+      "replay.fish"
+      "sponge"
+      "fish-abbreviation-tips"
     ];
   };
 
