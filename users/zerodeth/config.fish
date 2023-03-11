@@ -166,7 +166,7 @@ source "$HOME/.config/shell/shell_env"
 #-------------------------------------------------------------------------------
 
 if status is-interactive
-    abbr --add --global code cd ~/code
+    # abbr --add --global code cd ~/code  #TODO: Conflict with VSCode cmd (`code -v`)
     abbr --add --global personal cd ~/code/personal
     abbr --add --global business cd ~/code/business
     abbr --add --global nixos-config cd ~/code/nixos-config
