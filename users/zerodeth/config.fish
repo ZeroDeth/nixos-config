@@ -140,7 +140,6 @@ end
 # with it.
 alias fnix "nix-shell --run fish"
 
-
 #-------------------------------------------------------------------------------
 # Kubernetes
 #-------------------------------------------------------------------------------
@@ -163,7 +162,22 @@ eval (thefuck --alias | tr '\n' ';')
 source "$HOME/.config/shell/shell_env"
 
 #-------------------------------------------------------------------------------
+# Personal/Work spacess
+#-------------------------------------------------------------------------------
+
+if status is-interactive
+    abbr --add --global code cd ~/code
+    abbr --add --global personal cd ~/code/personal
+    abbr --add --global business cd ~/code/business
+    abbr --add --global nixos-config cd ~/code/nixos-config
+
+    # Administer like a sir
+    abbr --add --global please sudo
+end
+
+#-------------------------------------------------------------------------------
 # General
 #-------------------------------------------------------------------------------
+
 # Configure zoxide
 zoxide init fish | source
