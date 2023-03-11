@@ -197,8 +197,8 @@ in {
       "fish-foreign-env"
       "theme-bobthefish"
       "fish-kubectl-completions"
-      "plugin-git"
-      # "gitnow"
+      # "plugin-git"   #TODO: Issue with VSCode
+      # "gitnow"       #TODO: Required modifying config.fish prompt
       "fish-ssh-agent"
       "replay.fish"
       "sponge"
