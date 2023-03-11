@@ -119,9 +119,14 @@ in {
       gcp = "git cherry-pick";
       gdiff = "git diff";
       gl = "git prettylog";
+      gcount = "git shortlog -sn";
+      glg = "git log --stat";
+      gwch = "git whatchanged -p --abbrev-commit --pretty=medium";
       gp = "git push";
       gs = "git status";
       gt = "git tag";
+      gfa = "git fetch --all";
+      gpa = "git pull --all";
     };
   };
 
@@ -157,9 +162,14 @@ in {
       gcp = "git cherry-pick";
       gdiff = "git diff";
       gl = "git prettylog";
+      gcount = "git shortlog -sn";
+      glg = "git log --stat";
+      gwch = "git whatchanged -p --abbrev-commit --pretty=medium";
       gp = "git push";
       gs = "git status";
       gt = "git tag";
+      gfa = "git fetch --all";
+      gpa = "git pull --all";
 
       ls = "exa";
       ll = "exa -l";
