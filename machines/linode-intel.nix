@@ -246,33 +246,4 @@
     apiKeyFile = "/var/lib/longview/apiKeyFile";
   };
 
-  # services = {
-  #   nixos-hm-auto-update.enable = true;
-
-  #   nixos-vscode-ssh-fix.enable = true;
-  # };
-
-  # services = {
-  #   code-server.enable = true;
-  # };
-
-  # services = {
-  #   code-server = {
-  #     auth = "none";
-  #     enable = true;
-  #     # hashedPassword = "$6$CcMLI8gQfns/EcNe$fvRx3iKnyCJFWohwSgkbPDsLrJK6GRjmxcwniE8GWUVdLf9lAPj/L8U089jdfdAYIcgudChwMnzlR/x3XX3po.";
-  #     host = "0.0.0.0";
-  #     port = 8080;
-  #     user = "zerodeth";
-  #     # Type = "simple";
-  #     # ExecStart = ''
-  #     #   --port 8080 \
-  #     #   --bind-addr 0.0.0.0:8080 \
-  #     #   --disable-updates \
-  #     #   --auth none
-  #     # '';
-  #     # Restart = "always";
-  #   };
-  # };
-
 }
