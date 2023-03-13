@@ -8,6 +8,7 @@
   imports =
     [ # Include the results of the hardware scan.
       ../hardware/linode-intel.nix
+      ../modules/services/code-server.nix
       # ../modules/services/nixos-vscode-ssh-fix.nix
       # ../modules/services/nixos-hm-auto-update.nix
     ];
@@ -176,6 +177,7 @@
       # nodejs-16_x
       # yarn
       # git
+      code-server
 
     # For hypervisors that support auto-resizing, this script forces it.
     # I've noticed not everyone listens to the udev events so this is a hack.
@@ -248,6 +250,29 @@
   #   nixos-hm-auto-update.enable = true;
 
   #   nixos-vscode-ssh-fix.enable = true;
+  # };
+
+  # services = {
+  #   code-server.enable = true;
+  # };
+
+  # services = {
+  #   code-server = {
+  #     auth = "none";
+  #     enable = true;
+  #     # hashedPassword = "$6$CcMLI8gQfns/EcNe$fvRx3iKnyCJFWohwSgkbPDsLrJK6GRjmxcwniE8GWUVdLf9lAPj/L8U089jdfdAYIcgudChwMnzlR/x3XX3po.";
+  #     host = "0.0.0.0";
+  #     port = 8080;
+  #     user = "zerodeth";
+  #     # Type = "simple";
+  #     # ExecStart = ''
+  #     #   --port 8080 \
+  #     #   --bind-addr 0.0.0.0:8080 \
+  #     #   --disable-updates \
+  #     #   --auth none
+  #     # '';
+  #     # Restart = "always";
+  #   };
   # };
 
 }

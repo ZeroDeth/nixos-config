@@ -435,4 +435,26 @@ in {
     package = pkgs.vscode.fhs;
   };
 
+  # systemd.services.code-server = {
+  #   enable = true;
+  #   description = "Remote VSCode Server";
+  #   after = ["network.target"];
+  #   wantedBy = ["multi-user.target"];
+  #   path = [ pkgs.go pkgs.git pkgs.direnv ];
+
+  #   serviceConfig = {
+  #     Type = "simple";
+  #     ExecStart = "${xtruder.code-server}/bin/code-server";
+  #     WorkingDirectory = "/home/zerodeth";
+  #     NoNewPrivileges = true;
+  #     User = "zerodeth";
+  #     Group = "nogroup";
+  #   };
+  # };
+
+  # services.code-server = {
+  #   enable = isLinux;
+  #   # package = pkgs.code-server;
+  # };
+
 }

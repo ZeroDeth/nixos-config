@@ -11,19 +11,16 @@ in {
       type = lib.types.port;
       description = "The port on which vs code is served.";
       default = 5902;
-      example = 5902;
     };
-    domain = lib.mkOption {
-      type = lib.types.str;
-      description = "The domain to the code server.";
-      default = "code.breakds.org";
-      example = "code.breakds.org";
-    };
+    # domain = lib.mkOption {
+    #   type = lib.types.str;
+    #   description = "The domain to the code server.";
+    #   default = "code.breakds.org";
+    # };
     user = lib.mkOption {
       type = lib.types.str;
       description = "The user under which the server runs.";
       default = config.vital.mainUser;
-      example = "MyUserName";
     };
   };
 
