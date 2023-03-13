@@ -232,6 +232,7 @@ in {
       branch.autosetuprebase = "always";
       color.ui = true;
       core.askPass = ""; # needs to be empty to use terminal for ask pass
+      core.editor = "code --wait";
       credential.helper = "store"; # want to make this more secure
       github.user = "zerodeth";
       push.default = "tracking";
