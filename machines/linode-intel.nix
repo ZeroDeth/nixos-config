@@ -174,8 +174,8 @@
       # vim
       # firefox
       nixUnstable
-      # nodejs-16_x
-      # yarn
+      nodejs-16_x
+      yarn
       # git
       code-server
 
