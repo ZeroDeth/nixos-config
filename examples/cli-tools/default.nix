@@ -1,6 +1,10 @@
-# export NIXPKGS_ALLOW_UNFREE=1 && fnix $HOME/code/nixos-config/examples/cli-tools/cli-shell.nix
+# fnix $HOME/code/nixos-config/examples/cli-tools/default.nix
 
-with import <nixpkgs> {};
+with import <nixpkgs> {
+  config = {
+    allowUnfree = true;
+  };
+};
 
 stdenv.mkDerivation {
   name = "cli-env";
