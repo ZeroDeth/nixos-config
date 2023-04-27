@@ -252,6 +252,8 @@ in {
       push.default = "tracking";
       init.defaultBranch = "main";
     };
+    ignores = [ "*~" "*.swp" "*.history" "*.terraform/" "*.nix-node" "*.direnv" ];
+
   };
 
   programs.go = {
