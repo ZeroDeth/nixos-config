@@ -36,9 +36,6 @@
 
   nixpkgs.config.allowUnfree = true;
 
-  # We expect to run the VM on hidpi machines.
-  hardware.video.hidpi.enable = true;
-
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
   boot.loader.grub.version = 2;
