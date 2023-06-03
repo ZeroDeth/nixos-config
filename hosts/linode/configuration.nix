@@ -126,10 +126,12 @@
   # Enable the OpenSSH daemon.
   services.openssh = {
     enable = true;
-    # require public key authentication for better security
-    passwordAuthentication = false;
-    kbdInteractiveAuthentication = false;
-    permitRootLogin = "no";
+    settings = {
+      # require public key authentication for better security
+      PasswordAuthentication = false;
+      KbdInteractiveAuthentication = false;
+      PermitRootLogin = "no";
+    };
   };
 
   # Open ports in the firewall.
