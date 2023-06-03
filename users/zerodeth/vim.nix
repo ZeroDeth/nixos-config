@@ -3,6 +3,11 @@ self: super:
 let sources = import ../../nix/sources.nix; in rec {
   # My vim config
   customVim = with self; {
+    vim-copilot = vimUtils.buildVimPlugin {
+      name = "vim-copilot";
+      src = sources.vim-copilot;
+    };
+
     vim-cue = vimUtils.buildVimPlugin {
       name = "vim-cue";
       src = sources.vim-cue;
@@ -63,6 +68,11 @@ let sources = import ../../nix/sources.nix; in rec {
       };
     };
 
+    vim-devicons = vimUtils.buildVimPlugin {
+      name = "vim-devicons";
+      src = sources.vim-devicons;
+    };
+
     vim-nord = vimUtils.buildVimPlugin {
       name = "vim-nord";
       src = sources.vim-nord;
@@ -72,6 +82,11 @@ let sources = import ../../nix/sources.nix; in rec {
       name = "nvim-comment";
       src = sources.nvim-comment;
       buildPhase = ":";
+    };
+
+    nvim-magma = vimUtils.buildVimPlugin {
+      name = "nvim-magma";
+      src = sources.nvim-magma;
     };
 
     nvim-plenary = vimUtils.buildVimPlugin {

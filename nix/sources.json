@@ -137,10 +137,22 @@
         "homepage": "",
         "owner": "neovim",
         "repo": "nvim-lspconfig",
-        "rev": "4bb0f1845c5cc6465aecedc773fc2d619fcd8faf",
-        "sha256": "1p014wf031wnh195jd13sxbhdcxx3z2a8d95i6fv2rqvwlhzh3yq",
+        "rev": "1c0e6d39aa93deebdee35d4945889641e764619e",
+        "sha256": "0mfjy7jhis96n2az1g9rh9nyv721nhaadifslpczmw6driii9q59",
         "type": "tarball",
-        "url": "https://github.com/neovim/nvim-lspconfig/archive/4bb0f1845c5cc6465aecedc773fc2d619fcd8faf.tar.gz",
+        "url": "https://github.com/neovim/nvim-lspconfig/archive/1c0e6d39aa93deebdee35d4945889641e764619e.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "nvim-magma": {
+        "branch": "main",
+        "description": "Interact with Jupyter from NeoVim.",
+        "homepage": null,
+        "owner": "dccsillag",
+        "repo": "magma-nvim",
+        "rev": "395b48e2e202d82fca76c15d2dcd8785c125d686",
+        "sha256": "0fn2r1z3lx1zh2dxm5bpqpqb959pcylviag4xndv4z3gyyli4khn",
+        "type": "tarball",
+        "url": "https://github.com/dccsillag/magma-nvim/archive/395b48e2e202d82fca76c15d2dcd8785c125d686.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-plenary": {
@@ -173,10 +185,10 @@
         "homepage": "",
         "owner": "nvim-treesitter",
         "repo": "nvim-treesitter",
-        "rev": "5d59d18d3e6559e525fd933c41070303c5bae32b",
-        "sha256": "10ppmv3ijr49g5k05lf1ydkxdi5v38aynm0y2mj89c2p83dps8gv",
+        "rev": "957aefe8148902897aad877e508ae7e747f155fc",
+        "sha256": "19fd08k3ns65sqclr2b3pfrqirm92fwmzvxa726dawxfpq3m26mc",
         "type": "tarball",
-        "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/5d59d18d3e6559e525fd933c41070303c5bae32b.tar.gz",
+        "url": "https://github.com/nvim-treesitter/nvim-treesitter/archive/957aefe8148902897aad877e508ae7e747f155fc.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-treesitter-playground": {
@@ -185,10 +197,10 @@
         "homepage": "",
         "owner": "nvim-treesitter",
         "repo": "playground",
-        "rev": "4044b53c4d4fcd7a78eae20b8627f78ce7dc6f56",
-        "sha256": "11h0fi469fdjck318sa4fr4d4l1r57z3phhna6kclryz4mbjmk3v",
+        "rev": "2b81a018a49f8e476341dfcb228b7b808baba68b",
+        "sha256": "1b7h4sih8dc55w12f0v5knk9cxfpy0iffhbvmg0g84if55ar616v",
         "type": "tarball",
-        "url": "https://github.com/nvim-treesitter/playground/archive/4044b53c4d4fcd7a78eae20b8627f78ce7dc6f56.tar.gz",
+        "url": "https://github.com/nvim-treesitter/playground/archive/2b81a018a49f8e476341dfcb228b7b808baba68b.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "nvim-treesitter-textobjects": {
@@ -197,10 +209,10 @@
         "homepage": "",
         "owner": "nvim-treesitter",
         "repo": "nvim-treesitter-textobjects",
-        "rev": "542e0879d524ba717234fcba049b6c2da7989d5a",
-        "sha256": "0v5rjjjlfh9rddn4w7g1b5ng5z613gsg650i6yqvpsl2z7bgxdyx",
+        "rev": "35a60f093fa15a303874975f963428a5cd24e4a0",
+        "sha256": "16yxsqa5ppb9p8l3r6j11ak6a5448l6wy9dj4ag58i0r18l0cfj9",
         "type": "tarball",
-        "url": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects/archive/542e0879d524ba717234fcba049b6c2da7989d5a.tar.gz",
+        "url": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects/archive/35a60f093fa15a303874975f963428a5cd24e4a0.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "pack": {
@@ -371,16 +383,16 @@
         "url": "https://github.com/mitchellh/tree-sitter-proto/archive/42d82fa18f8afe59b5fc0b16c207ee4f84cb185f.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
-    "vikube.vim": {
-        "branch": "master",
-        "description": "Operating Kubernetes Cluster from Vim, in Vim",
+    "vim-copilot": {
+        "branch": "release",
+        "description": "Neovim plugin for GitHub Copilot",
         "homepage": null,
-        "owner": "c9s",
-        "repo": "vikube.vim",
-        "rev": "8b930ed7a64880e9073458111db0e7ccecfd1231",
-        "sha256": "15v556jw7mq1cb28j0nm34ha7kc2dg11s4jn9dipvn3kl6vprhyd",
+        "owner": "github",
+        "repo": "copilot.vim",
+        "rev": "1358e8e45ecedc53daf971924a0541ddf6224faf",
+        "sha256": "171ypwb85ya8n63zykdnb8d4ni2jbn728x7r6ph1m67k06g0w4pb",
         "type": "tarball",
-        "url": "https://github.com/c9s/vikube.vim/archive/8b930ed7a64880e9073458111db0e7ccecfd1231.tar.gz",
+        "url": "https://github.com/github/copilot.vim/archive/1358e8e45ecedc53daf971924a0541ddf6224faf.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-cue": {
@@ -393,6 +405,18 @@
         "sha256": "01f89ki0w2j58pfdvb8w0sf1x5nqgqh3bldinifpd4pysnqhniai",
         "type": "tarball",
         "url": "https://github.com/jjo/vim-cue/archive/bd1a62303d096aa24fe4160a475645087f8770b3.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "vim-devicons": {
+        "branch": "master",
+        "description": "Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more",
+        "homepage": "",
+        "owner": "ryanoasis",
+        "repo": "vim-devicons",
+        "rev": "71f239af28b7214eebb60d4ea5bd040291fb7e33",
+        "sha256": "0kshppxgi63wn96a8h9zv7drwqcbljin5jhszh8q7pqw2xsd83gn",
+        "type": "tarball",
+        "url": "https://github.com/ryanoasis/vim-devicons/archive/71f239af28b7214eebb60d4ea5bd040291fb7e33.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-dracula": {
@@ -425,10 +449,10 @@
         "homepage": "https://www.vim.org/scripts/script.php?script_id=2975",
         "owner": "tpope",
         "repo": "vim-fugitive",
-        "rev": "5b52a0f395065d6cb7b65a00a5e17eaf9ebd64d5",
-        "sha256": "1skvg3w7aaj0cnjx6fdrbfdn46yi62j14jcb46b832a05zgsymq7",
+        "rev": "5f0d280b517cacb16f59316659966c7ca5e2bea2",
+        "sha256": "0qgxchrsydxznxwz3gwksqg3nal1ypmwi0ibpkf4whc62a8xxgl6",
         "type": "tarball",
-        "url": "https://github.com/tpope/vim-fugitive/archive/5b52a0f395065d6cb7b65a00a5e17eaf9ebd64d5.tar.gz",
+        "url": "https://github.com/tpope/vim-fugitive/archive/5f0d280b517cacb16f59316659966c7ca5e2bea2.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-glsl": {
@@ -449,10 +473,10 @@
         "homepage": null,
         "owner": "mitchellh",
         "repo": "vim-misc",
-        "rev": "1205bd43e9b692d253572eddaf784977ae46f35b",
-        "sha256": "1n6dsgppzgy95inq6mbqmphgbv7s97aslfmwdgasd8zy8grbd623",
+        "rev": "ca7946cbecc2d63a7c83ad0a894d8c2653fd1963",
+        "sha256": "0bq3i36dnrl3c3xx09ny7mrdz30sp5c9yiaqi2f68sy0vj6qlga4",
         "type": "tarball",
-        "url": "https://github.com/mitchellh/vim-misc/archive/1205bd43e9b692d253572eddaf784977ae46f35b.tar.gz",
+        "url": "https://github.com/mitchellh/vim-misc/archive/ca7946cbecc2d63a7c83ad0a894d8c2653fd1963.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     },
     "vim-nord": {
@@ -521,10 +545,10 @@
         "homepage": null,
         "owner": "ziglang",
         "repo": "zig.vim",
-        "rev": "a0d9adedafeb1a33a0159d16ddcdf194b7cea881",
-        "sha256": "0qcjwms102cpdbjamda3cbdwbqdk4zj5zrvr9dlj2lmwkdjqqfdz",
+        "rev": "a9633f5f5905e448049933bfcdaab632447c4394",
+        "sha256": "1bi82sdq7x46f6z9xv24x3ahhsg7bxcm2wabjfw5wmlpp6m13csa",
         "type": "tarball",
-        "url": "https://github.com/ziglang/zig.vim/archive/a0d9adedafeb1a33a0159d16ddcdf194b7cea881.tar.gz",
+        "url": "https://github.com/ziglang/zig.vim/archive/a9633f5f5905e448049933bfcdaab632447c4394.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
     }
 }

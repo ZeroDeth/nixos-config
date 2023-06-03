@@ -60,10 +60,21 @@ in {
 
     pkgs.gopls
     pkgs.zigpkgs.master
-  ] ++ (lib.optionals isLinux [
+
+    # Node is required for Copilot.vim
+    pkgs.nodejs
+
+    (pkgs.python3.withPackages (p: with p; [
+      ipython
+      jupyter
+    ]))
+  ] ++ (lib.optionals isDarwin [
+    # This is automatically setup on Linux
+    pkgs.cachix
+    pkgs.tailscale
+  ]) ++ (lib.optionals isLinux [
     pkgs.chromium
     pkgs.firefox
-    pkgs.k2pdfopt
     pkgs.rofi
     pkgs.zathura
 
@@ -161,13 +172,19 @@ in {
 
   programs.fish = {
     enable = true;
-    interactiveShellInit = lib.strings.concatStrings (lib.strings.intersperse "\n" [
+    interactiveShellInit = lib.strings.concatStrings (lib.strings.intersperse "\n" ([
       "source ${sources.theme-bobthefish}/functions/fish_prompt.fish"
       "source ${sources.theme-bobthefish}/functions/fish_right_prompt.fish"
       "source ${sources.theme-bobthefish}/functions/fish_title.fish"
+    ] ++ (if isDarwin then [
+      # On Mac, we want to always set this to load the shell integration for the
+      # terminals we use. Kitty always sets this but other terminals also work
+      # with this just fine.
+      "set -g KITTY_INSTALLATION_DIR ${pkgs.kitty}/Applications/kitty.app/Contents/Resources/kitty"
+    ] else []) ++ [
       (builtins.readFile ./config.fish)
       "set -g SHELL ${pkgs.fish}/bin/fish"
-    ]);
+    ]));
 
     shellAliases = {
       ga = "git add";
@@ -340,7 +357,18 @@ in {
     enable = true;
     package = pkgs.neovim-nightly;
 
+    withPython3 = true;
+    extraPython3Packages = (p: with p; [
+      # For nvim-magma
+      jupyter-client
+      cairosvg
+      plotly
+      #pnglatex
+      #kaleido
+    ]);
+
     plugins = with pkgs; [
+      customVim.vim-copilot
       customVim.vim-cue
       customVim.vim-fish
       customVim.vim-fugitive
@@ -352,6 +380,7 @@ in {
       customVim.pigeon
       customVim.AfterColors
 
+      customVim.vim-devicons
       customVim.vim-nord
       customVim.nvim-comment
       customVim.nvim-lspconfig
@@ -360,6 +389,7 @@ in {
       customVim.nvim-treesitter
       customVim.nvim-treesitter-playground
       customVim.nvim-treesitter-textobjects
+      customVim.nvim-magma
 
       vimPlugins.vim-airline
       vimPlugins.vim-airline-themes
