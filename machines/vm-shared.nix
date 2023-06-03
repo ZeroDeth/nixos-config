@@ -25,6 +25,7 @@
   nixpkgs.config.permittedInsecurePackages = [
     # Needed for k2pdfopt 2.53.
     "mupdf-1.17.0"
+    "nodejs-16.20.0"
   ];
 
   # Use the systemd-boot EFI boot loader.

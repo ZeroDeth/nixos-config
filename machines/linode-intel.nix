@@ -32,6 +32,7 @@
     nixpkgs.config.permittedInsecurePackages = [
     # Needed for k2pdfopt 2.53.
     "mupdf-1.17.0"
+    "nodejs-16.20.0"
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -171,7 +172,7 @@
       # vim
       # firefox
       nixUnstable
-      nodejs-16_x
+      nodejs_16
       yarn
       # git
       code-server

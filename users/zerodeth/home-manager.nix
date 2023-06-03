@@ -62,7 +62,7 @@ in {
     pkgs.zigpkgs.master
 
     # Node is required for Copilot.vim
-    pkgs.nodejs
+    # pkgs.nodejs #TODO: Installed nodejs_16 under linode-intel.nix
 
     (pkgs.python3.withPackages (p: with p; [
       ipython
