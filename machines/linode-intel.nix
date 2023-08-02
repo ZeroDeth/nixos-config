@@ -36,6 +36,7 @@
     "mupdf-1.17.0"
     "nodejs-16.20.0"
     "nodejs-16.20.1"
+    "nodejs-18.16.1"
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -171,13 +172,13 @@
       inetutils
       mtr
       sysstat
-      # vim
+      vim
       # firefox
       nixUnstable
-      nodejs
+      nodejs_16
       yarn
-      # git
-      code-server
+      git
+      # code-server
 
     # For hypervisors that support auto-resizing, this script forces it.
     # I've noticed not everyone listens to the udev events so this is a hack.
