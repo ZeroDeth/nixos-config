@@ -48,8 +48,10 @@ end
 # Ghostty supports auto-injection but Nix-darwin hard overwrites XDG_DATA_DIRS
 # which make it so that we can't use the auto-injection. We have to source
 # manually.
-if set -q GHOSTTY_RESOURCES_DIR
-    source "$GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish"
+if set -q KITTY_INSTALLATION_DIR
+    set --global KITTY_SHELL_INTEGRATION enabled
+    source "$KITTY_INSTALLATION_DIR/shell-integration/fish/vendor_conf.d/kitty-shell-integration.fish"
+    set --prepend fish_complete_path "$KITTY_INSTALLATION_DIR/shell-integration/fish/vendor_completions.d"
 end
 
 #-------------------------------------------------------------------------------

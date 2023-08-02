@@ -23,15 +23,24 @@
     # public binary cache that I use for all my derivations. You can keep
     # this, use your own, or toss it. Its typically safe to use a binary cache
     # since the data inside is checksummed.
-    binaryCaches = ["https://mitchellh-nixos-config.cachix.org"];
-    binaryCachePublicKeys = ["mitchellh-nixos-config.cachix.org-1:bjEbXJyLrL1HZZHBbO4QALnI5faYZppzkU4D2s0G8RQ="];
+    settings = {
+      substituters = ["https://mitchellh-nixos-config.cachix.org"];
+      trusted-public-keys = ["mitchellh-nixos-config.cachix.org-1:bjEbXJyLrL1HZZHBbO4QALnI5faYZppzkU4D2s0G8RQ="];
+    };
   };
+
+    nixpkgs.config.permittedInsecurePackages = [
+    # Needed for k2pdfopt 2.53.
+    "mupdf-1.17.0"
+    "nodejs-16.20.0"
+    "nodejs-16.20.1"
+    "nodejs-18.16.1"
+  ];
 
   nixpkgs.config.allowUnfree = true;
 
   # Use the GRUB 2 boot loader.
   boot.loader.grub.enable = true;
-  boot.loader.grub.version = 2;
   # boot.loader.grub.efiSupport = true;
   # boot.loader.grub.efiInstallAsRemovable = true;
   # boot.loader.efi.efiSysMountPoint = "/boot/efi";
@@ -107,7 +116,7 @@
       vim
       # firefox
       nixUnstable
-      nodejs-16_x
+      nodejs
       yarn
       git
 
@@ -169,7 +178,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Did you read the comment?
 
   # Enable Longview Agent
   services.longview = {
