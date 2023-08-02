@@ -29,6 +29,14 @@
     };
   };
 
+    nixpkgs.config.permittedInsecurePackages = [
+    # Needed for k2pdfopt 2.53.
+    "mupdf-1.17.0"
+    "nodejs-16.20.0"
+    "nodejs-16.20.1"
+    "nodejs-18.16.1"
+  ];
+
   nixpkgs.config.allowUnfree = true;
 
   # Use the GRUB 2 boot loader.
@@ -108,7 +116,7 @@
       vim
       # firefox
       nixUnstable
-      nodejs-16_x
+      nodejs
       yarn
       git
 
@@ -170,7 +178,7 @@
   # this value at the release version of the first install of this system.
   # Before changing this value read the documentation for this option
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
-  system.stateVersion = "22.05"; # Did you read the comment?
+  system.stateVersion = "23.05"; # Did you read the comment?
 
   # Enable Longview Agent
   services.longview = {
